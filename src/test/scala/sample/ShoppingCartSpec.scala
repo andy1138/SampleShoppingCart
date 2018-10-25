@@ -18,5 +18,11 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     ShoppingCart.checkout(data) should be(0)
   }
 
+  "Shopping cart" should "return total sum of all oranges in the basket" in {
+
+    ShoppingCart.checkout(List(Orange, Orange, Orange, Orange)) should be(1)
+
+  }
+
 
 }
