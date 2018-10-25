@@ -36,5 +36,9 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   }
 
+  "A Shopping Cart introduces offer for apples as by one get one free then checkout method" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Apple, Apple, Apple , Apple)) should be(1.2)
+
+  }
 
 }
