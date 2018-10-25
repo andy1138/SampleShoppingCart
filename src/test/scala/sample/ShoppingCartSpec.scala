@@ -30,4 +30,11 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   }
 
+  "Shopping cart" should "return total sum of all oranges, apples and a random fruit in the basket" in {
+
+    ShoppingCart.checkout(List(Apple, Orange, Orange, Apple, "banana", "guava")) should be(1.7)
+
+  }
+
+
 }
