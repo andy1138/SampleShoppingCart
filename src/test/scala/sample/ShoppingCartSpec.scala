@@ -57,5 +57,38 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
 
 
+  "A Shopping Cart with an Apple" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Apple), includeOffer = true) should be(0.60)
+  }
+
+  "A Shopping Cart with 3 Apples" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Apple, Apple, Apple ), includeOffer = true) should be(1.2)
+  }
+
+
+  "A Shopping Cart with an Orange" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Orange ), includeOffer = true) should be(0.25)
+  }
+
+  "A Shopping Cart with 2 Oranges" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Orange, Orange ), includeOffer = true) should be(0.50)
+  }
+
+
+  "A Shopping Cart with 3 Oranges" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Orange, Orange, Orange ), includeOffer = true) should be(0.50)
+  }
+
+
+  "A Shopping Cart with 4 Oranges" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Orange, Orange, Orange, Orange ), includeOffer = true) should be(0.75)
+  }
+
+
+  "A Shopping Cart with 2 Apples and 3 Oranges" should "return total price including the offer" in {
+    ShoppingCart.checkout(List(Apple, Apple, Orange, Orange, Orange ), includeOffer = true) should be(1.7)
+  }
+
+
 
 }
